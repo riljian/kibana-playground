@@ -9,3 +9,10 @@ class Role:
 
 class Station:
     ADATA = 'Adata'
+
+
+class BigDataDeviceType:
+    IOS = 'iOS'
+    ANDROID = 'Android'
+    WINDOWS = 'Windows'
+    LINUX = 'Linux'
