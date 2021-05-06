@@ -6,6 +6,6 @@ metadata:
 spec:
   healthCheck:
     type: HTTP
-    requestPath: /app/kibana
+    requestPath: /login
     port: 5601
 
