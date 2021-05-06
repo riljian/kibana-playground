@@ -1,0 +1,11 @@
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: kibana-backend-config
+  namespace: adata
+spec:
+  healthCheck:
+    type: HTTP
+    requestPath: /app/kibana
+    port: 5601
+
