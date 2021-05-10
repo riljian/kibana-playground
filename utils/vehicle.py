@@ -1,4 +1,5 @@
 import secrets
+import random
 from uuid import uuid4
 
 
@@ -60,3 +61,13 @@ def gen_vehicles(amount):
             'model': secrets.choice(models),
         }
     return list(map(get_vehicle, range(amount)))
+
+
+def gen_repair_items(amount):
+    def get_repair_item(id):
+        return {
+            'id': id,
+            'name': f'Item {id}',
+            'each_cost': random.randrange(10, 100),
+        }
+    return list(map(get_repair_item, range(amount)))
