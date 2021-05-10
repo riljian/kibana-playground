@@ -1,7 +1,7 @@
 import json
 import secrets
 
-from utils.vehicle import gen_vehicles
+from utils.vehicle import gen_vehicles, gen_repair_items
 from utils.user import gen_employees
 from utils.repair import gen_repair_log
 
@@ -12,10 +12,12 @@ def write_log(file_descriptor, log):
 
 if __name__ == '__main__':
     employees = gen_employees(5)
-    vehicles = gen_vehicles(10)
+    vehicles = gen_vehicles(100)
+    repair_items = gen_repair_items(10)
 
     with open('dummy-log.json', 'w') as f:
-        for i in range(100):
+        for i in range(1000):
             log = gen_repair_log(creator=secrets.choice(employees),
-                                 vehicle=secrets.choice(vehicles))
+                                 vehicle=secrets.choice(vehicles),
+                                 repair_items=repair_items)
             write_log(f, log)
